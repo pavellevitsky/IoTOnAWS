@@ -52,7 +52,7 @@ function getCarData(deviceName)
     let message = {
         'trip_id': crypto.randomBytes(15).toString('hex'),
         'engine_speed_mean': randomFloatBetween(700.55555, 3000.55555),
-        'fuel_level': randomFloatBetween(23, 100),
+        'fuel_level': randomFloatBetween(20, 100),
         'high_acceleration_event': randomFloatBetween(0, 12),
         'high_breaking_event': randomFloatBetween(0, 4),
         'odometer': randomFloatBetween(0.374318249, 8.142630049),

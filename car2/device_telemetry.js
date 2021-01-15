@@ -34,7 +34,7 @@ function infiniteLoopPublish()
 {
     console.log('[10s] Sending [' + deviceName + '] telemetry data to AWS IoT');
     // Publish car data to lab/telemetry topic with getCarData
-    device.publish("data", JSON.stringify(getCarData(deviceName)));
+    device.publish("lab/telemetry", JSON.stringify(getCarData(deviceName)));
     
     // Start Infinite Loop of Publish every 10 seconds
     setTimeout(infiniteLoopPublish, 10000);
@@ -53,6 +53,10 @@ function getCarData(deviceName)
         'trip_id': crypto.randomBytes(15).toString('hex'),
         'engine_speed_mean': randomFloatBetween(700.55555, 3000.55555),
         'fuel_level': randomFloatBetween(20, 100),
+        'high_acceleration_event': randomFloatBetween(0, 12),
+        'high_breaking_event': randomFloatBetween(0, 4),
+        'odometer': randomFloatBetween(0.374318249, 8.142630049),
+        'oil_temp_mean': randomFloatBetween(12.7100589, 205.3165256)
     };
     
     const device_data = { 
