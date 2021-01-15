@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>AWS lab IoT Shadow</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        html, body { font-family: "Amazon Ember", "Helvetica", "sans-serif"; margin: 0; }
+        a { color: #FF9900; }
+        h1 { font-weight: 300; }
+    </style>
+</head>
+
+<body>
+
+<table>
+
+<tr><td width=300><big>thing/car1</big><td width=300><big>thing/car2</big>
+<tr>
+<td>
+   <div id="car1_step_1">Connect to AWS IoT</div>
+   <div id="car1_step_2">Register to Shadow</div>
+   <div id="car1_step_3">Fetch status</div>
+<td>
+   <div id="car2_step_1">Connect to AWS IoT</div>
+   <div id="car2_step_2">Register to Shadow</div>
+   <div id="car2_step_3">Fetch status</div>
+
+<tr>
+<td><div id="car1_lights"></div>
+<td><div id="car2_lights"></div>
+
+<tr>
+<td><button id="Car1LightsEventButton">Toggle lights</button>
+<td><button id="Car2LightsEventButton">Toggle lights</button>
+
+<tr>
+<td><img id="car1_image" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" />
+<td><img id="car2_image" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" />
+
+</table>
+
+<script src="aws-iot-sdk-browser-bundle-min.js"></script>
+<script src="aws-configuration.js"></script>
+<script src="index.js"></script>
+
+<div id="preload">
+<img src="images/car-no-lights.png" width="1" height="1" />
+<img src="images/car-with-lights.png" width="1" height="1" />
+</div>
+
+</body>
+
+</html>
